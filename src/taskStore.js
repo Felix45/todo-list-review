@@ -31,14 +31,11 @@ class TaskStore {
   }
 
   regenerateTaskIds = () => {
-    this.tasks = this.getTasks().map((task, index) => {
-      task.index = index + 1;
-      return task;
-    });
+    this.tasks = this.getTasks().map((task, index) => { task.index = index + 1; return task; });
   }
 
   setTaskStaus = (updateIndex) => {
-    this.tasks[updateIndex].completed = this.tasks[updateIndex].completed ? false : true;
+    this.tasks[updateIndex].completed = !this.tasks[updateIndex].completed;
     this.populateLocalStorage();
   }
 
