@@ -38,11 +38,7 @@ class TaskStore {
   }
 
   setTaskStaus = (updateIndex) => {
-    if (this.tasks[updateIndex].completed) {
-      this.tasks[updateIndex].completed = false;
-    } else {
-      this.tasks[updateIndex].completed = true;
-    }
+    this.tasks[updateIndex].completed = this.tasks[updateIndex].completed ? false : true;
     this.populateLocalStorage();
   }
 
