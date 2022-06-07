@@ -43,26 +43,34 @@ class Helper {
     };
 
     static editTextHandler = () => {
-      const textFields = document.querySelectorAll('.edit-desc');
+      const ellipsis = document.querySelectorAll('.edit-desc');
       const editFields = document.querySelectorAll('.desc');
 
-      textFields.forEach((textField) => {
-        textField.addEventListener('click', (event) => {
+      ellipsis.forEach((ellipse) => {
+        ellipse.addEventListener('click', (event) => {
           editFields.forEach((editField) => {
-            editField.disabled = true;
-            editField.parentNode.classList.remove('high-light');
-            editField.parentNode.querySelector('.edit-desc').classList.remove('d-none');
-            editField.parentNode.querySelector('.fa-trash').classList.add('d-none');
+            Helper.resetTextFields(editField);
           });
-          event.target.parentNode.classList.add('high-light');
-          const task = event.target.parentNode.querySelector('.desc');
-          const deleteButton = event.target.parentNode.querySelector('.fa-trash');
-          task.disabled = false;
-          task.focus();
-          event.target.classList.toggle('d-none');
-          deleteButton.classList.toggle('d-none');
+          Helper.enableCurrentInput(event);
         });
       });
+    }
+
+    static resetTextFields = (editField) => {
+      editField.disabled = true;
+      editField.parentNode.classList.remove('high-light');
+      editField.parentNode.querySelector('.edit-desc').classList.remove('d-none');
+      editField.parentNode.querySelector('.fa-trash').classList.add('d-none');
+    }
+
+    static enableCurrentInput = (event) => {
+      event.target.parentNode.classList.add('high-light');
+      const taskInput = event.target.parentNode.querySelector('.desc');
+      const deleteButton = event.target.parentNode.querySelector('.fa-trash');
+      taskInput.disabled = false;
+      taskInput.focus();
+      event.target.classList.toggle('d-none');
+      deleteButton.classList.toggle('d-none');
     }
 }
 
