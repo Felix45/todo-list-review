@@ -1,7 +1,7 @@
-const form = document.forms[0];
-const addField = form.elements.todo;
-const returnIcon = document.querySelector('.fa-level-down');
-const clearTodo = document.querySelector('.clear');
+var form = document.forms[0];
+var addField = form.elements.todo;
+var returnIcon = document.querySelector('.fa-level-down');
+var clearTodo = document.querySelector('.clear');
 
 const addBookHandler = ({ taskstore }) => {
   if (addField.value !== '') {

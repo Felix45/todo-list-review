@@ -149,6 +149,19 @@ li {
   margin-top: -5px;
 }
 
+/*
+.pos-rel {
+  position: relative;
+}
+
+.desc {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+}
+*/
+
 .todo-container input[type="text"]:disabled {
   border: none;
   background-color: transparent;
@@ -174,3 +187,4 @@ li {
 .todo-container ul li {
   border-bottom: 1px solid var(--gray);
 }
+
