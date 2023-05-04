@@ -4,7 +4,7 @@ import {
 } from './domElement.js';
 import './style.css';
 
-const taskstore = new TaskStore();
+var taskstore = new TaskStore();
 
 window.addEventListener('load', () => {
   taskstore.printTodoList();
